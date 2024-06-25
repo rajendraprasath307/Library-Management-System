@@ -52,31 +52,30 @@ To run this project locally:
 
 ## Project Structure
 
--library_management/
--├── **library_management/**         **<- Django project root**
--│   ├── settings.py             <- Django settings file
--│   ├── urls.py                 <- Django root URL configuration
--│   ├── wsgi.py                 <- WSGI configuration for deployment
--│
--├── **library/**                    **<- Django app directory**
--│   ├── models.py               <- Django models for database
--│   ├── views.py                <- Django views for handling requests
--│   ├── templates/              <- Directory for HTML templates
--│   │   ├── base.html           <- Base template for HTML pages
--│   │   ├── index.html          <- Template for home page
--│   │   ├── students.html       <- Template for students page
--│   │   ├── books.html          <- Template for books page
--│   │   ├── add_student.html    <- Template for adding a student
--│   │   ├── add_book.html       <- Template for adding a book
--│   │   ├── borrow_book.html    <- Template for borrowing a book
--│   │   ├── return_book.html    <- Template for returning a book
--│   ├── static/                 <- Directory for static files
--│   │   ├── favicon.ico         <- Favicon icon file
--│   │   ├── styles.css          <- CSS stylesheet
--│   │   └── Screenshot 2024-06-25 153749.png  <- Image file
--│
--├── manage.py                   <- Django's command-line utility for management tasks
-
+library_management/
+├── library_management/         <- Django project root
+│   ├── settings.py             <- Django settings file
+│   ├── urls.py                 <- Django root URL configuration
+│   ├── wsgi.py                 <- WSGI configuration for deployment
+│
+├── library/                    <- Django app directory
+│   ├── models.py               <- Django models for database
+│   ├── views.py                <- Django views for handling requests
+│   ├── templates/              <- Directory for HTML templates
+│   │   ├── base.html           <- Base template for HTML pages
+│   │   ├── index.html          <- Template for home page
+│   │   ├── students.html       <- Template for students page
+│   │   ├── books.html          <- Template for books page
+│   │   ├── add_student.html    <- Template for adding a student
+│   │   ├── add_book.html       <- Template for adding a book
+│   │   ├── borrow_book.html    <- Template for borrowing a book
+│   │   ├── return_book.html    <- Template for returning a book
+│   ├── static/                 <- Directory for static files
+│   │   ├── favicon.ico         <- Favicon icon file
+│   │   ├── styles.css          <- CSS stylesheet
+│   │   └── Screenshot 2024-06-25 153749.png  <- Image file
+│
+├── manage.py                   <- Django's command-line utility for management tasks
 
 
 ## Description
