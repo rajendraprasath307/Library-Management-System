@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Borrow Book{% endblock %}
+
+{% block content %}
+    <h2>Borrow Book</h2>
+    <form action="{% url 'borrow_book' %}" method="post">
+        {% csrf_token %}
+        <label for="student_id">Select Student:</label>
+        <select id="student_id" name="student_id" required>
+            {% for student in students %}
+                <option value="{{ student.id }}">{{ student.name }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="book_id">Select Book:</label>
+        <select id="book_id" name="book_id" required>
+            {% for book in books %}
+                {% if not book.is_borrowed %}
+                    <option value="{{ book.id }}"><strong>Title:</strong> {{ book.title }}
+                <strong>Author:</strong> {{ book.author }}
+                <strong>General:</strong> {{ book.general }}
+                <strong>Publisher:</strong> {{ book.publisher }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" value="Borrow Book">
+    </form>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Welcome to Library Management System</h2>
+
+    <div class="intro">
+        <p>Your one-stop solution for managing library resources efficiently. Browse through our collection, borrow books, and manage your account with ease.</p>
+    </div>
+
+    <div class="search-bar">
+        <form id="searchForm" action="{% url 'search_books' %}" method="get">
+            {% csrf_token %}
+            <input type="text" name="query" placeholder="Search for books..." required value="{{ query }}">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="section">
+        <h3>Library Statistics</h3>
+        <ul class="stats">
+            <li>Total Books: {{ total_books }}</li>
+            <li>Total Students: {{ total_students }}</li>
+            <li>Books Borrowed: {{ borrowed_books }}</li>
+            <li>Books Available: {{ available_books }}</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+
+<!--{% csrf_token %}:
+This template tag outputs a hidden CSRF (Cross-Site Request Forgery) token within the form.
+CSRF tokens are essential for securely submitting forms in Django to protect against malicious attacks.-->

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Library Management System{% endblock %}</title>
+    {% load static %}
+    <meta name="csrf-token" content="{% csrf_token %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Library Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'students' %}">Students</a></li>
+                <li><a href="{% url 'books' %}">Books</a></li>
+                <li><a href="{% url 'add_student' %}">Add Student</a></li>
+                <li><a href="{% url 'add_book' %}">Add Book</a></li>
+                <li><a href="{% url 'borrow_book' %}">Borrow Book</a></li>
+                <li><a href="{% url 'return_book' %}">Return Book</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>
